@@ -489,10 +489,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="flex items-center justify-between gap-4 border-t border-[var(--border)] px-4 py-5 sm:px-6 lg:px-8">
-            <div className="text-[0.74rem] font-medium uppercase tracking-[0.3em] text-[var(--muted)] sm:text-[0.82rem]">
-              {titleText.location}
-            </div>
+          <div className="flex justify-end border-t border-[var(--border)] px-4 py-5 sm:px-6 lg:px-8">
             <a
               href="#projects"
               aria-label="Scroll to projects"
