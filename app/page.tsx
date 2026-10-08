@@ -376,7 +376,6 @@ export default function Home() {
         intro: "HI, I'M PEDRO HENRIQUE",
         role: "FULL STACK DEVELOPER",
         sub: "BUILDING MODERN WEB APPLICATIONS.",
-        location: "BRASÍLIA, BR — 2026",
         selected: "SELECTED WORK",
         about: "ABOUT ME",
         projects: "Projects",
