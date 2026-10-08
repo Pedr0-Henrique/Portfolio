@@ -60,6 +60,7 @@ type Project = {
   featured?: boolean;
   githubUrl?: string;
   demoUrl?: string;
+  showViewProject?: boolean;
 };
 
 type SkillGroup = {
@@ -170,6 +171,7 @@ const projects: Record<Language, Project[]> = {
       stack: ["React", "TypeScript", "CSS", "Spring Boot", "PostgreSQL", "Docker"],
       accent: "from-violet-500/30 via-fuchsia-400/5 to-transparent",
       githubUrl: "https://github.com/Pedr0-Henrique/help-desk",
+      showViewProject: false,
     },
     {
       number: "03",
@@ -178,6 +180,7 @@ const projects: Record<Language, Project[]> = {
       stack: ["React", "TypeScript", "Spring Boot", "PostgreSQL", "JWT", "Docker"],
       accent: "from-emerald-500/30 via-teal-400/5 to-transparent",
       githubUrl: "https://github.com/Pedr0-Henrique/barber_shop",
+      showViewProject: false,
     },
     {
       number: "04",
@@ -186,14 +189,16 @@ const projects: Record<Language, Project[]> = {
       stack: ["TypeScript", "React", "Laravel", "MySQL", "Docker"],
       accent: "from-amber-500/30 via-orange-400/5 to-transparent",
       githubUrl: "https://github.com/Pedr0-Henrique/AcademicHub",
+      showViewProject: false,
     },
     {
       number: "05",
       title: "Finance-Manager",
       description: "Aplicação web para controle financeiro pessoal com organização de receitas e despesas.",
-      stack: ["PHP", "MySQL", "React"],
+      stack: ["PHP", "MySQL", "React", "Tailwind CSS"],
       accent: "from-rose-500/30 via-pink-400/5 to-transparent",
       githubUrl: "https://github.com/Pedr0-Henrique/Finance-Manager",
+      showViewProject: false,
     },
     {
       number: "06",
@@ -202,6 +207,7 @@ const projects: Record<Language, Project[]> = {
       stack: ["Java", "Spring Boot", "MySQL", "Postman", "Nuxt.js"],
       accent: "from-orange-500/30 via-yellow-400/5 to-transparent",
       githubUrl: "https://github.com/Pedr0-Henrique/cooknary",
+      showViewProject: false,
     },
     {
       number: "07",
@@ -239,6 +245,7 @@ const projects: Record<Language, Project[]> = {
       stack: ["React", "TypeScript", "CSS", "Spring Boot", "PostgreSQL", "Docker"],
       accent: "from-violet-500/30 via-fuchsia-400/5 to-transparent",
       githubUrl: "https://github.com/Pedr0-Henrique/help-desk",
+      showViewProject: false,
     },
     {
       number: "03",
@@ -247,6 +254,7 @@ const projects: Record<Language, Project[]> = {
       stack: ["React", "TypeScript", "Spring Boot", "PostgreSQL", "JWT", "Docker"],
       accent: "from-emerald-500/30 via-teal-400/5 to-transparent",
       githubUrl: "https://github.com/Pedr0-Henrique/barber_shop",
+      showViewProject: false,
     },
     {
       number: "04",
@@ -255,14 +263,16 @@ const projects: Record<Language, Project[]> = {
       stack: ["TypeScript", "React", "Laravel", "MySQL", "Docker"],
       accent: "from-amber-500/30 via-orange-400/5 to-transparent",
       githubUrl: "https://github.com/Pedr0-Henrique/AcademicHub",
+      showViewProject: false,
     },
     {
       number: "05",
       title: "Finance-Manager",
       description: "Web application for managing personal finances and organizing income and expenses.",
-      stack: ["PHP", "MySQL", "React"],
+      stack: ["PHP", "MySQL", "React", "Tailwind CSS"],
       accent: "from-rose-500/30 via-pink-400/5 to-transparent",
       githubUrl: "https://github.com/Pedr0-Henrique/Finance-Manager",
+      showViewProject: false,
     },
     {
       number: "06",
@@ -271,6 +281,7 @@ const projects: Record<Language, Project[]> = {
       stack: ["Java", "Spring Boot", "MySQL", "Postman", "Nuxt.js"],
       accent: "from-orange-500/30 via-yellow-400/5 to-transparent",
       githubUrl: "https://github.com/Pedr0-Henrique/cooknary",
+      showViewProject: false,
     },
     {
       number: "07",
@@ -641,17 +652,19 @@ export default function Home() {
                     </div>
 
                     <div className="flex items-center justify-between gap-3">
-                      <a
-                        href={project.demoUrl ?? "#contact"}
-                        target={project.demoUrl ? "_blank" : undefined}
-                        rel={project.demoUrl ? "noreferrer" : undefined}
-                        className="inline-flex items-center gap-2 text-sm font-medium text-[var(--text)]"
-                      >
-                        {project.demoUrl
-                          ? language === "pt" ? "Ver demo" : "Live demo"
-                          : titleText.viewProject}{" "}
-                        <ArrowUpRight size={14} />
-                      </a>
+                      {project.showViewProject !== false && (
+                        <a
+                          href={project.demoUrl ?? "#contact"}
+                          target={project.demoUrl ? "_blank" : undefined}
+                          rel={project.demoUrl ? "noreferrer" : undefined}
+                          className="inline-flex items-center gap-2 text-sm font-medium text-[var(--text)]"
+                        >
+                          {project.demoUrl
+                            ? language === "pt" ? "Ver demo" : "Live demo"
+                            : titleText.viewProject}{" "}
+                          <ArrowUpRight size={14} />
+                        </a>
+                      )}
                       <a href={project.githubUrl ?? "https://github.com"} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-[var(--muted)] hover:text-[var(--text)]">
                         GitHub <FaGithub aria-hidden="true" size={14} />
                       </a>
