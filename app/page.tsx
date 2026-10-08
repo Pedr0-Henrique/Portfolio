@@ -452,7 +452,7 @@ export default function Home() {
             >
               <motion.p
                 variants={fadeUp}
-                className="max-w-[34rem] text-[0.95rem] font-medium uppercase tracking-[0.18em] text-[var(--muted)] md:text-[1.05rem]"
+                className="hero-intro max-w-[34rem] text-[0.95rem] font-medium uppercase tracking-[0.18em] text-[var(--muted)] md:text-[1.05rem]"
               >
                 {titleText.intro}
                 <span className="mt-2 block text-[var(--text)]">
@@ -463,12 +463,15 @@ export default function Home() {
 
               <motion.h1
                 variants={fadeUp}
-                className="mt-8 text-[clamp(4.5rem,10vw,14rem)] font-black leading-[0.78] tracking-[-0.09em] text-[var(--text)]"
+                className="hero-title mt-8 text-[clamp(4.5rem,10vw,14rem)] font-black leading-[0.78] tracking-[-0.09em] text-[var(--text)]"
               >
                 <span className="block leading-[0.74] tracking-[-0.04em]">FULL</span>
                 <span className="block leading-[0.74] tracking-[-0.04em]">STACK</span>
-                <span className="flex items-center gap-3 leading-[0.74] tracking-[-0.10em] text-[var(--text)]">
+                <span className="hidden items-center gap-3 leading-[0.74] tracking-[-0.10em] text-[var(--text)] sm:flex">
                   DEV<span className="inline-flex text-[var(--blue)]">⚡</span>LOPER
+                </span>
+                <span className="block leading-[0.74] tracking-[-0.10em] text-[var(--text)] sm:hidden">
+                  DEVELOPER
                 </span>
               </motion.h1>
 
